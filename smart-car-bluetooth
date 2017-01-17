@@ -1,0 +1,25 @@
+#!/usr/bin/expect -f
+
+
+set timeout -1
+
+spawn "bluetoothctl"
+expect "#"
+send "discoverable on\r"
+expect "Changing discoverable on succeeded"
+send "pairable on\r"
+expect "Changing pairable on succeeded"
+send "agent on\r"
+expect "Agent registered"
+send "default-agent\r"
+expect "Default agent request successful"
+
+expect "agent"
+expect "Confirm passkey *"
+send "yes\r"       ;# Sen answer
+expect "Authorize service *"
+send "yes\r"
+
+;" Bluetooth connection done
+
+send "exit\r"

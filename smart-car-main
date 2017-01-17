@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#sleep 5s
+
+echo "*********************"
+echo "* Project smart car *"
+echo "*********************"
+
+echo "**************"
+echo "* 2017-01-12 *"
+echo "**************"
+
+echo "*************************"
+echo "* Setting up PulseAudio *"
+echo "*************************"
+
+pulseaudio -D
+
+echo "***************************************"
+echo "* Launching Bluetooth connection code *"
+echo "***************************************"
+
+
+/home/pi/smart-car-code/./smart-car-bluetooth
+
+echo "*****************************"
+echo "* Bluetooth connection done *"
+echo "*****************************"
