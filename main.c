@@ -1,9 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <wiringPi.h>
 
 int main(void)
 {
-	// Pulseaudio is on. Now bluetooth should be initialized.
 	int status = 0;
-	status = system("/home/pi/smart-car-code/./smart-car-bluetooth");
+
+	wiringPiSetup ();
+	pinMode(0, INPUT);
+
+	int bluetoothTrigger =  digitalRead (0);
+
+	// Pulseaudio is on. Now bluetooth should be initialized.
+	if(bluetoothTrigger)
+		status = system("/home/pi/smart-car-code/./smart-car-bluetooth");
 }
