@@ -4,12 +4,14 @@
 
 int main(void)
 {
-	int status = 0;
+	int status = 0, bluetoothTrigger = 0;
 
 	wiringPiSetup ();
+	pinMode(0,OUTPUT);
+	digitalWrite(0,0);
 	pinMode(0, INPUT);
 
-	int bluetoothTrigger =  digitalRead (0);
+	bluetoothTrigger =  digitalRead (0);
 
 	// Pulseaudio is on. Now bluetooth should be initialized.
 	if(bluetoothTrigger)
