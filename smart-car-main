@@ -16,13 +16,19 @@ echo "*************************"
 
 pulseaudio -D
 
-echo "***************************************"
-echo "* Launching Bluetooth connection code *"
-echo "***************************************"
+echo "*************************"
+echo "* Launching main program*"
+echo "*************************"
+
+/home/pi/smart-car-code/./main
+
+#echo "***************************************"
+#echo "* Launching Bluetooth connection code *"
+#echo "***************************************"
 
 
-/home/pi/smart-car-code/./smart-car-bluetooth
+#/home/pi/smart-car-code/./smart-car-bluetooth
 
-echo "*****************************"
-echo "* Bluetooth connection done *"
-echo "*****************************"
+#echo "*****************************"
+#echo "* Bluetooth connection done *"
+#echo "*****************************"
