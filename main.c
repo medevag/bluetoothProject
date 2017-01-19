@@ -9,6 +9,7 @@ int main(void)
 	wiringPiSetup ();
 	pinMode(0,OUTPUT);
 	digitalWrite(0,0);
+	sleep(10);
 	pinMode(0, INPUT);
 
 	bluetoothTrigger =  digitalRead (0);
