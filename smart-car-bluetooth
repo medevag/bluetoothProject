@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
 
-set timeout 40
+set timeout -1
 
 spawn "bluetoothctl"
 expect "#"
