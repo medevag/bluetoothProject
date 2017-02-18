@@ -29,7 +29,7 @@ GPIO 4 WiringPi 4
 #define SHUTDOWN_PIN  		 	 (2)
 #define BLUETOOTH_PIN 		 	 (0)
 
-static int bluetoothTrigger = 3, shutdownTrigger = 3, executionControl = 5;
+static int bluetoothTrigger = 3, shutdownTrigger = 3, dropConnectionsTrigger = 3,  executionControl = 5;
 
 void readGPIO(void);
 
