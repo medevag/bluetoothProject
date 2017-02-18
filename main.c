@@ -20,7 +20,7 @@ GPIO 2 WiringPi 2
 #define SHUTDOWN_PIN  		 	 (2)
 #define BLUETOOTH_PIN 		 	 (0)
 
-static int index = 80000;
+static int index = 80000, bluetoothTrigger = 3, shutdownTrigger = 3;
 
 int main(void)
 {
@@ -70,9 +70,7 @@ int main(void)
 }
 
 int functionality(){
-
-	// Variables
-	int bluetoothTrigger = 3, shutdownTrigger = 3;
+	int bluetoothPrevious = 7;
 
 	// Read GPIO to see if bluetooth visible triggered 
 	bluetoothTrigger = digitalRead(BLUETOOTH_PIN);
@@ -80,9 +78,16 @@ int functionality(){
 	// Read GPIO to see if shutdown should be triggered
 	shutdownTrigger = digitalRead(SHUTDOWN_PIN);
 
+	if(bluetoothPrevious == BLUETOOTH_REQUESTED){
+		bluetoothTrigger = 7;
+	}else{
+		bluetoothPrevious = 7;
+	}
+
 	// Pulseaudio is on. Now bluetooth should be initialized.
 	if(bluetoothTrigger == BLUETOOTH_REQUESTED){
 		printf("Bluetooth");
+		bluetoothPrevious = BLUETOOTH_REQUESTED;
 		(void) system("/home/pi/bluetoothProject/./smart-car-bluetooth");
 	}
 
