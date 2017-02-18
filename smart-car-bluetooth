@@ -4,6 +4,8 @@ set timeout 50
 
 spawn "bluetoothctl"
 expect "#"
+send "power on\r"
+expect "# *"
 send "discoverable on\r"
 expect "Changing discoverable on succeeded"
 send "pairable on\r"
