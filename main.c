@@ -53,7 +53,7 @@ int main(void)
 	Otherwise run main functionality
 	*/
 	while (index > 0){
-		printf("While\n");
+
 		// Read execution control pin
 		executionControl = digitalRead(NO_EXECUTION_PIN);
 
