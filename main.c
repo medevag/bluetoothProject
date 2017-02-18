@@ -29,7 +29,7 @@ GPIO 4 WiringPi 4
 #define SHUTDOWN_PIN  		 	 (2)
 #define BLUETOOTH_PIN 		 	 (0)
 
-static int bluetoothTrigger = 3, shutdownTrigger = 3, dropConnectionsTrigger = 3,  executionControl = 5;
+static int bluetoothTrigger = 3, shutdownTrigger = 3, dropConnectionsTrigger = 3,  executionControl = 5, loopCount = 0;
 
 void readGPIO(void);
 
@@ -77,7 +77,10 @@ int main(void)
 	while (1){
 		// Read execution control pin
 		executionControl = digitalRead(NO_EXECUTION_PIN);
-		printf("Loop\n");
+		if(loopCount == 0){
+			printf("Loop\n");
+		}
+
 		if(executionControl == DO_NOT_EXECUTE){
 			// Stop execution
 			printf("Stop execution\n");
@@ -85,6 +88,9 @@ int main(void)
 		}
 		// Run main functionality reading GPIO pins
 		readGPIO();
+
+		loopCount = (loopCounter+1) % 15;
+
 	}
 
 	return 0;
