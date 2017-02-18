@@ -31,6 +31,8 @@ GPIO 4 WiringPi 4
 
 static int bluetoothTrigger = 3, shutdownTrigger = 3, executionControl = 5;
 
+void readGPIO(void);
+
 int main(void)
 {
 	// Set up WiringPi and pins
