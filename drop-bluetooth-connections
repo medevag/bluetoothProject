@@ -8,7 +8,7 @@ send "power off\r"
 expect "Changing power off succeeded"
 
 send "power on\r"
-expect "# *"
+expect "Changing power on succeeded"
 send "discoverable on\r"
 expect "Changing discoverable on succeeded"
 send "pairable on\r"
