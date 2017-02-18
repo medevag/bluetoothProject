@@ -57,7 +57,7 @@ int functionality(){
 
 	// Shutdown procedure should begin
 	if(shutdownTrigger == SHUTDOWN_REQUESTED){
-		printf("Shutdown");
+		printf("Shutdown\n");
 		//status = system("sudo init 0");
 	}
 
