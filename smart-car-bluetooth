@@ -20,6 +20,7 @@ expect {
 				send "discoverable off\r"
 				exit
 		}
+}
 
 send "yes\r"     
 expect "Authorize service *"
