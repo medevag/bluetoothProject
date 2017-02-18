@@ -1,3 +1,21 @@
-#!/bin/bash
+#!/usr/bin/expect -f
 
+set timeout 50
 
+spawn "bluetoothctl"
+expect "#"
+send "pairable on\r"
+expect "Changing pairable on succeeded"
+send "agent on\r"
+expect "Agent registered"
+send "default-agent\r"
+expect "Default agent request successful"
+
+expect {
+	timeout {puts "timed out"; exit}
+	"Confirm passkey *"
+	"Authorize service *"	
+}
+send "yes\r"
+     
+expect "#"
