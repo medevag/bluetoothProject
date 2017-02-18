@@ -14,15 +14,10 @@ send "default-agent\r"
 expect "Default agent request successful"
 
 expect {
-		timeout{ 
-				send "discoverable off\r"
-				exit
-		}
-
 		"Confirm passkey *"	
 }
-
-send "yes\r"     
+send "yes\r"
+     
 expect "Authorize service *"
 send "yes\r"
 
