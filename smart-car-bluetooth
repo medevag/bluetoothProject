@@ -20,6 +20,14 @@ expect {
 	"Confirm passkey *" {send "yes\r"}
 	"Authorize service *" {send "yes\r"}
 }
+
+expect "#"
+
+expect {
+	timeout {puts "timed out"; exit}
+	"Confirm passkey *" {send "yes\r"}
+	"Authorize service *" {send "yes\r"}
+}
      
 expect "#"
 
