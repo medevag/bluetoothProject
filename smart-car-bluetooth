@@ -23,6 +23,8 @@ expect {
 
 expect "#"
 
+sleep 2
+
 expect {
 	timeout {puts "timed out"; exit}
 	"Confirm passkey *" {send "yes\r"}
