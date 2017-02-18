@@ -100,7 +100,7 @@ void readGPIO(){
 	shutdownTrigger = digitalRead(SHUTDOWN_PIN);
 
 	// Read GPIO to see if all bluetooth connections should be dropped
-	dropConnectionsTrigger = digitalRead(DROP_CONNECTIONS_PIN)
+	dropConnectionsTrigger = digitalRead(DROP_CONNECTIONS_PIN);
 
 	if(bluetoothPrevious == BLUETOOTH_REQUESTED){
 		bluetoothTrigger = 7;
