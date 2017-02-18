@@ -12,12 +12,24 @@ GPIO 2 WiringPi 2
 
 #define SHUTDOWN_REQUESTED     	 (0)
 #define BLUETOOTH_REQUESTED      (1)
-#define SHUTDOWN_PIN  		 (2)
-#define BLUETOOTH_PIN 		 (0)
+#define SHUTDOWN_PIN  		 	 (2)
+#define BLUETOOTH_PIN 		 	 (0)
+
+static int index = 1000;
 
 int main(void)
 {
-	// Variables
+	while (index > 0){
+		index = functionality();
+		printf("Loop\n");
+	}
+
+	return 0;
+}
+
+int functionality(){
+
+// Variables
 	int status = 0, bluetoothTrigger = 3, shutdownTrigger = 3;
 
 	// Set up WiringPi
@@ -49,5 +61,5 @@ int main(void)
 		//status = system("sudo init 0");
 	}
 
-
+	return --index;
 }
