@@ -21,5 +21,4 @@ send "yes\r"
 expect "Authorize service *"
 send "yes\r"
 
-send "discoverable off\r"
-send "exit\r"
+
