@@ -20,12 +20,15 @@ GPIO 2 WiringPi 2
 #define SHUTDOWN_PIN  		 	 (2)
 #define BLUETOOTH_PIN 		 	 (0)
 
-static int index = 40000;
+static int index = 80000;
 
 int main(void)
 {
 	// Set up WiringPi
 	wiringPiSetup ();
+
+	// Variables
+	int executionControl = 5;
 
 	/*
 	Set up pins
@@ -50,11 +53,11 @@ int main(void)
 	Otherwise run main functionality
 	*/
 	while (index > 0){
-
+		printf("While\n");
 		// Read execution control pin
-		exectionControl = digitalRead(NO_EXECUTION_PIN);
-		
-		if(exectionControl == DO_NOT_EXECUTE){
+		executionControl = digitalRead(NO_EXECUTION_PIN);
+
+		if(executionControl == DO_NOT_EXECUTE){
 			// Stop execution
 			printf("Stop execution\n");
 			return 0;
