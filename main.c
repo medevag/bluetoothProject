@@ -89,7 +89,7 @@ int main(void)
 		// Run main functionality reading GPIO pins
 		readGPIO();
 
-		loopCount = (loopCount+1) % 15;
+		loopCount = (loopCount+1) % 100;
 
 	}
 
