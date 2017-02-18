@@ -52,11 +52,11 @@ int main(void)
 	Pin is pull up. If zero is read stop execution
 	Otherwise run main functionality
 	*/
-	while (index > 0){
+	while (1){//index > 0){
 
 		// Read execution control pin
 		executionControl = digitalRead(NO_EXECUTION_PIN);
-
+		printf("Loop\n");
 		if(executionControl == DO_NOT_EXECUTE){
 			// Stop execution
 			printf("Stop execution\n");
