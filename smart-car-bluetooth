@@ -13,13 +13,17 @@ expect "Agent registered"
 send "default-agent\r"
 expect "Default agent request successful"
 
-expect "Confirm passkey *"
-timeout { puts "\n\nScript Failure: \n\r"; exit}
+expect {
+		"Confirm passkey *"	
+
+		timeout{ 
+				send "discoverable off\r"
+				exit
+		}
 
 send "yes\r"     
 expect "Authorize service *"
 send "yes\r"
 
-;" Bluetooth connection done
-
+send "discoverable off\r"
 send "exit\r"
