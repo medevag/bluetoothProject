@@ -15,13 +15,13 @@ GPIO 2 WiringPi 2
 #define SHUTDOWN_PIN  		 	 (2)
 #define BLUETOOTH_PIN 		 	 (0)
 
-static int index = 1000;
+static int index = 100000;
 
 int main(void)
 {
 	while (index > 0){
 		index = functionality();
-		printf("Loop\n");
+		//printf("Loop\n");
 	}
 
 	return 0;
@@ -53,12 +53,15 @@ int functionality(){
 	// Pulseaudio is on. Now bluetooth should be initialized.
 	if(bluetoothTrigger == BLUETOOTH_REQUESTED){
 		status = system("/home/pi/bluetoothProject/./smart-car-bluetooth");
+		printf("Bluetooth");
 	}
 
 	// Shutdown procedure should begin
 	if(shutdownTrigger == SHUTDOWN_REQUESTED){
 		printf("Shutdown\n");
-		//status = system("sudo init 0");
+		status = system("sudo init 0");
+	}else{
+		printf("No shutdown\n");
 	}
 
 	return --index;
