@@ -1,6 +1,6 @@
 #!/usr/bin/expect -f
 
-set timeout -1
+set timeout 10
 
 spawn "bluetoothctl"
 expect "#"
@@ -14,11 +14,12 @@ send "default-agent\r"
 expect "Default agent request successful"
 
 expect {
-		"Confirm passkey *"	
+	timeout {puts "timed out"; exit}
+	"Confirm passkey *"	
 }
 send "yes\r"
      
 expect "Authorize service *"
 send "yes\r"
-
+expect "#"
 
