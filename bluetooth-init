@@ -14,8 +14,7 @@ expect "Default agent request successful"
 expect {
 	timeout {puts "timed out"; exit}
 	"Confirm passkey *" {send "yes\r"}
-	"Authorize service *"	
+	"Authorize service *" {send "yes\r"}
 }
-send "yes\r"
      
 expect "#"
