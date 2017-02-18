@@ -5,7 +5,7 @@ set timeout 50
 spawn "bluetoothctl"
 expect "#"
 send "power off\r"
-expect "# *"
+expect "Changing power off succeeded"
 
 send "power on\r"
 expect "# *"
