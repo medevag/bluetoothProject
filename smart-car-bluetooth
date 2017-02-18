@@ -13,7 +13,7 @@ expect "Agent registered"
 send "default-agent\r"
 expect "Default agent request successful"
 
-;"expect "agent"
+;"expect agent
 timeout { puts "\n\nScript Failure: \n\r"; exit}
 expect "Confirm passkey *"
 send "yes\r"     
