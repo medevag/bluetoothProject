@@ -9,7 +9,7 @@ expect "Changing discoverable on succeeded"
 
 expect {
 	timeout {puts "timed out"; exit}
-	"Confirm passkey *"
+	"Confirm passkey *" {send "yes\r"}
 	"Authorize service *"	
 }
 send "yes\r"
